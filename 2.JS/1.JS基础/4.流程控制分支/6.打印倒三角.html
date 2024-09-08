@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var rols = prompt('请输入倒三角的行数');
+        var cols = prompt('请输入倒三角的列数');
+        var troangle = '';
+        // 第一行是10，第二行9，是等差数列
+        for (var i = 1; i <= rols; i++) {
+            for (var j = i; j <= cols; j++) {
+                troangle += '★';
+            }
+            troangle += '\n';
+        }
+        console.log(troangle);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

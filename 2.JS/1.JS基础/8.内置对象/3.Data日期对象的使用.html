@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script>
+      //Date() 日期对象是一个构造函数 必须使用new来调用创建我们的日期对象
+      //1.使用Date 如果没有参数 返回当前系统的当前时间
+      var date = new Date();
+      console.log(date);
+      //2.参数常用的写法 数字型2024，06，13 或者是字符串型'2024-06-13'
+      var date1 = new Date(2024, 6, 13); //返回的是7月，不是6月
+      console.log(date1);
+      var date2 = new Date("2024-06-13");
+      console.log(date2);
+
+      //格式化日期 年月份
+      var date = new Date();
+      console.log(date.getFullYear()); //返回当前日期的年 2024
+      console.log(date.getMonth() + 1); //返回当前的月份小1个月
+      console.log(date.getDate()); //返回的是几号
+      console.log(date.getDay()); //获取星期几 但是周日返回的是0
+      //我们写一个2024年6月13日星期四
+      var year = date.getFullYear();
+      var month = date.getMonth() + 1;
+      var dates = date.getDate();
+      var day = date.getDay();
+      var arr = [
+        "星期日",
+        "星期一",
+        "星期二",
+        "星期三",
+        "星期四",
+        "星期五",
+        "星期六",
+      ];
+      console.log(year + "年" + month + "月" + dates + "日" + arr[day]);
+
+      //格式化日期 时分秒
+      var date1 = new Date();
+      console.log(date.getHours()); //时间
+      console.log(date.getMinutes()); //分
+      console.log(date.getSeconds()); //秒
+      //要求封装一个函数返回当前的时分秒 格式11：40：08
+      function getTimer() {
+        var time = new Date();
+        var h = date.getHours();
+        h = h < 10 ? "0" + h : h;
+        var m = date.getMinutes();
+        m = m < 10 ? "0" + m : m;
+        var s = date.getSeconds();
+        s = s < 10 ? "0" + s : s;
+        return h + ":" + m + ":" + s;
+      }
+      console.log(getTimer());
+
+      //获得Date总的毫秒数(时间戳) 不是当前时间的毫秒数 而是距离1970年1月1日过了多少毫秒数
+      //1.通过valueOf() getTime()
+      var date = new Date();
+      console.log(date.valueOf()); //是我们现在时间 距离1970年1月1日总的毫秒数
+      console.log(date.getTime());
+      //2.简答的写法(最常用的写法)
+      var date1 = +new Date(); //+new Date() 返回的就是总的毫秒数
+      console.log(date1);
+      //3. H5新增的 获得总的毫秒数
+      console.log(Date.now());
+    </script>
+  </head>
+
+  <body></body>
+</html>

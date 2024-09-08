@@ -1,0 +1,125 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?n43uqv');
+  src:  url('fonts/icomoon.eot?n43uqv#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?n43uqv') format('truetype'),
+    url('fonts/icomoon.woff?n43uqv') format('woff'),
+    url('fonts/icomoon.svg?n43uqv#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-academia:before {
+  content: "\e900";
+}
+.icon-apache:before {
+  content: "\e901";
+  color: #d22128;
+}
+.icon-co-op:before {
+  content: "\e902";
+  color: #00b1e7;
+}
+.icon-designernews:before {
+  content: "\e903";
+  color: #2d72d9;
+}
+.icon-dot-net:before {
+  content: "\e904";
+  color: #5c2d91;
+}
+.icon-facebook:before {
+  content: "\e905";
+  color: #1877f2;
+}
+.icon-hatenabookmark:before {
+  content: "\e906";
+  color: #00a4de;
+}
+.icon-haxe:before {
+  content: "\e907";
+  color: #ea8220;
+}
+.icon-jetbrains:before {
+  content: "\e908";
+}
+.icon-jira:before {
+  content: "\e909";
+}
+.icon-joomla:before {
+  content: "\e90a";
+  color: #5091cd;
+}
+.icon-keybase:before {
+  content: "\e90b";
+  color: #33a0ff;
+}
+.icon-linux:before {
+  content: "\e90c";
+  color: #fcc624;
+}
+.icon-lufthansa:before {
+  content: "\e90d";
+  color: #05164d;
+}
+.icon-macys:before {
+  content: "\e90e";
+  color: #e21a2c;
+}
+.icon-magento:before {
+  content: "\e90f";
+  color: #ee672f;
+}
+.icon-mail-dot-ru:before {
+  content: "\e910";
+  color: #168de2;
+}
+.icon-mercedes:before {
+  content: "\e911";
+}
+.icon-phone:before {
+  content: "\e942";
+}
+.icon-phone-hang-up:before {
+  content: "\e943";
+}
+.icon-location:before {
+  content: "\e947";
+}
+.icon-location2:before {
+  content: "\e948";
+}
+.icon-search:before {
+  content: "\e986";
+}
+.icon-volume-increase:before {
+  content: "\ea2b";
+}
+.icon-arrow-up2:before {
+  content: "\ea3a";
+}
+.icon-arrow-right2:before {
+  content: "\ea3c";
+}
+.icon-arrow-down2:before {
+  content: "\ea3e";
+}
+.icon-arrow-left2:before {
+  content: "\ea40";
+}

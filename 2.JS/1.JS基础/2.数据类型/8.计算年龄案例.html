@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //弹出一个输入框(prompt),让用户输入出生年份(用户输入)
+        //把用户输入的值用变量保存起来，然后用今年的年份减去变量值，结果就是现在的年龄
+        //弹出警示框alert，然后把计算的结果输出
+        var year = prompt('请输入您的出生年份');
+        var age = 2024 - year;//year取过来的是字符串型，但是这里用的减法 有隐式转换
+        alert('您的年龄是:' + age + '岁');
+
+        //简单加法器的案例
+        var one = prompt('请输入第一个值');//prompt取值是字符串类型
+        var two = prompt('请输入第二个值');
+        var sum = parseFloat(one) + parseFloat(two);
+        alert('两个值相加的结果是:' + sum);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

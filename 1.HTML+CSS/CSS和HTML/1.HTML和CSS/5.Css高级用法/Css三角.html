@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            width: 0;
+            height: 0;
+            /* border: 10px solid blue; */
+            border-top: 10px solid pink;
+            border-left: 10px solid red;
+            border-bottom: 10px solid blue;
+            border-right: 10px solid greenyellow;
+        }
+
+        .box2 {
+            /* 三角形做法 */
+            /* 首先宽和高都是0 */
+            width: 0;
+            height: 0;
+            /* 然后指定一个边框为10px 三角形的大小和边框大小有关
+            然后把另外三个边框设置为transparent透明的
+            如果要倒三角，就把下左右设为透明
+            */
+            border: 10px solid transparent;
+            border-top-color: aqua;
+            margin-left: 30px;
+            margin-top: 30px;
+        }
+
+        .box3 {
+            width: 0;
+            height: 0;
+            border: 10px solid transparent;
+            border-left-color: red;
+            margin-left: 30px;
+            margin-top: -10px;
+
+        }
+
+        .box4 {
+            width: 0;
+            height: 0;
+            border: 10px solid transparent;
+            border-bottom-color: chartreuse;
+            margin-left: 30px;
+            margin-top: -10px;
+        }
+
+        .box5 {
+            width: 0;
+            height: 0;
+            border: 10px solid transparent;
+            border-right-color: darkorange;
+            margin-left: 30px;
+            margin-top: 2px;
+            /* 为了照顾低版本的游览器，通常也可以加上 */
+            line-height: 0;
+            font-size: 0;
+
+        }
+
+        .jd {
+            position: relative;
+            width: 100px;
+            height: 240px;
+            background-color: aqua;
+            margin-top: 10px;
+        }
+
+        .jd span {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border: 10px solid transparent;
+            border-bottom-color: chartreuse;
+            line-height: 0;
+            font-size: 0;
+            right: 10px;
+            top: -19px;
+
+
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+    <div class="box5"></div>
+    <div class="jd">
+        <span></span>
+    </div>
+
+</body>
+
+</html>

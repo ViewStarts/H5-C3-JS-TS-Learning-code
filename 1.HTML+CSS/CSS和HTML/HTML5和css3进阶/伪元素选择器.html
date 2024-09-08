@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 字体声明 */
+        @font-face {
+            font-family: 'icomoon';
+            src: url('fonts/icomoon.eot?n43uqv');
+            src: url('fonts/icomoon.eot?n43uqv#iefix') format('embedded-opentype'),
+                url('fonts/icomoon.ttf?n43uqv') format('truetype'),
+                url('fonts/icomoon.woff?n43uqv') format('woff'),
+                url('fonts/icomoon.svg?n43uqv#icomoon') format('svg');
+            font-weight: normal;
+            font-style: normal;
+            font-display: block;
+        }
+
+        .div0 {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+
+        /* 伪元素选择器默认是行内元素，没办法直接设置大小，要转行为行内块元素 */
+        /* 伪元素选择器权重为1 */
+        .div0::before {
+            /* 这个content是必须要写的 */
+            content: '傻逼';
+        }
+
+        .div0::after {
+            content: "我不是傻逼";
+        }
+
+        .div1 {
+            position: relative;
+            width: 200px;
+            height: 40px;
+            border: 1px solid red;
+
+        }
+
+        .div1::after {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-family: 'icomoon';
+            content: '';
+            /* content: '\e91e'; */
+            color: red;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div0">我是粉色</div>
+    <div class="div1"></div>
+
+</body>
+
+</html>

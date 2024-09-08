@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            /* 让图片和文字垂直居中 */
+            vertical-align: middle;
+        }
+
+        textarea {
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 用于设置一个元素的垂直对齐方式，
+        但是他只正对于行内元素或者行内块元素有效
+    vertical-align baseline默认基线对齐
+    top顶线对齐 Middle中线对齐 bottom低线对齐
+    -->
+    <img src="img/千方百剂.jpg" alt="">pink老师是刘德华
+
+    <br>
+
+    <textarea name="" id="" cols="30" rows="10"></textarea>请你留言
+    <br><br>
+    <!-- 解决图片底部默认空白缝隙问题 -->
+    <!-- bug:图片底侧会有一个空白缝隙，原因是行内块元素会和文字的基线对齐。 -->
+    <!-- 解决办法有两种
+    1.给图片添加vertical-align:bottom，只要不是基线对齐都可以(推荐)
+    2.给图片转换为块级元素display:block
+    
+    -->
+    <img src="img/千方百剂.jpg" alt="" style="vertical-align: bottom;">pink老师是刘德华
+
+
+</body>
+
+</html>

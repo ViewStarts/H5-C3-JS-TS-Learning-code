@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var age = prompt('输入您的年龄');
+        //1.parseInt(变量) 可以把字符型转换为数字型 得到是整数
+        console.log(parseInt(age));
+        console.log(parseInt('3.1415'));// 3 取整 不会四舍五入
+        console.log(parseInt('120px'));// 120 会去掉px单位
+
+        //2.perseFloat(变量) 转换为数字型 得到是浮点数
+        console.log(parseFloat('3.1415926'));
+
+        //3.利用Number(变量)
+        var str = '123';
+        console.log(Number(str));
+        console.log(Number('12'));
+
+        //4.利用了算数运算 隐式转换 + — * /
+        console.log('12' - 0);
+        console.log('123' - 10);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

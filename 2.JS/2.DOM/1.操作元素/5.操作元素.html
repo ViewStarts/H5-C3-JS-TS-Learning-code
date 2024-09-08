@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div,
+      p {
+        width: 500px;
+        height: 30px;
+        line-height: 30px;
+        color: #fff;
+        background-color: aquamarine;
+        color: rgb(0, 0, 0);
+      }
+    </style>
+    <script></script>
+  </head>
+
+  <body>
+    <button>显示当前系统时间</button>
+    <div>某个时间</div>
+    <p>123</p>
+
+    <script>
+      //当我们点击了按钮 div里面的文字会发生变化
+      //1;获取元素
+      var btn = document.querySelector("button");
+      var div = document.querySelector("div");
+      //2.注册事件 onclick点击事件
+      btn.onclick = function () {
+        // div.innerText = "2019-6-6";这种 是获得死的时间
+        div.innerText = getDate();
+      };
+
+      //我们元素可以不用添加事件
+      var p = document.querySelector("p"); //获取元素
+      p.innerText = getDate(); //操作dom
+
+      function getDate() {
+        var d = new Date();
+        var year = d.getFullYear(); //获取年份
+        var month = d.getMonth(); //获取月份，但是默认小1 需要加1
+        var date = d.getDate(); //获取星期
+        var day = d.getDay(); //获取星期几 但是国外日期周日默认为0
+        var hours = d.getHours(); //获取小时
+        var minutes = d.getMinutes(); //获取分钟
+        var seconds = d.getSeconds(); //获取秒
+        var day1 = [
+          "星期日",
+          "星期一",
+          "星期二",
+          "星期三",
+          "星期四",
+          "星期五",
+          "星期六",
+        ];
+        return (
+          "今天的日期是:" +
+          year +
+          "年" +
+          month +
+          "月" +
+          date +
+          "日" +
+          day1[day] +
+          hours +
+          "点" +
+          minutes +
+          "分" +
+          seconds +
+          "秒"
+        );
+      }
+    </script>
+  </body>
+</html>

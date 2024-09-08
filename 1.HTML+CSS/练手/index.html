@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>故事的结局重要吗</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: white;
+            font-size: 20px;
+        }
+
+        .a1 {
+            width: 800px;
+
+        }
+
+        .a1 img {
+            border: 1px solid white;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            /* 调用动画 */
+            animation-name: xuanzhuan;
+            /* 总的持续时间  */
+            animation-duration: 20s;
+            animation-iteration-count: infinite;
+            animation-delay: 0s;
+            animation-timing-function: ease;
+
+        }
+
+        @keyframes xuanzhuan {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .a2 {
+            margin-left: 50px;
+            overflow: hidden;
+            font-size: 20px;
+            white-space: nowrap;
+            width: 0;
+            height: 30px;
+            /* steps就是分几步来完成我们的动画 有steps就不要写我们的ease了 */
+            animation: w 10s steps(40) forwards;
+        }
+
+
+        @keyframes w {
+            0% {
+                width: 0;
+                /* 动画开始时，容器宽度为 0，文本不可见 */
+            }
+
+            100% {
+                width: 1300px;
+                /* 动画结束时，容器宽度为 100%，显示全部文本 */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <audio src="./故事的结局重要吗.MP3" autoplay="autoplay"></audio>
+    <div class="a1"><img src="./emo.jpg" alt=""> </div>
+    <div class="a2">
+        故事的结局重不重要呢
+    </div>
+
+    </div>
+
+</body>
+
+</html>

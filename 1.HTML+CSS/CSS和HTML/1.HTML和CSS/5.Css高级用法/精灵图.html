@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            /* 用ps测量图片高度和宽度，分别为60px */
+            width: 60px;
+            height: 60px;
+            /* 图片居中 */
+            margin: 100px auto;
+            /* 插入背景图片 */
+            background: url(img/王者荣耀index.webp);
+            /* 用Ps测量以后，得到x坐标为183px，要让图片和盒子对齐，则要往左边移动183px，所以是-183px */
+            /* background-position:url -183 0 no-repeat; */
+            background-position-x: -183px;
+        }
+
+        .box2 {
+            width: 30px;
+            height: 25px;
+            margin: 200px auto;
+            background: url(img/王者荣耀index.webp) -153px -106px no-repeat;
+        }
+
+        .lijun {
+            width: 93px;
+            height: 115px;
+            margin: 50px 50px;
+            background: url(img/姓名.jpg) -7px -270px;
+            float: left;
+        }
+
+        .i1 {
+            float: left;
+            width: 60px;
+            height: 115px;
+            margin: 50px -50px;
+            background: url(img/姓名.jpg) -325px -136px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        1.精灵图主要针对小的背景图片使用
+        2.主要借助于背景位置background-position
+        3.一般情况下精灵图都是负值
+
+     -->
+    <div class="box1">
+
+    </div>
+
+    <div class="box2">
+
+    </div>
+
+    <!-- 拼自己名字 -->
+    <div class="lijun">
+
+    </div>
+    <div class="i1">
+
+    </div>
+
+</body>
+
+</html>

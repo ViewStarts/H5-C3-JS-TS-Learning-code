@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        color: red;
+    }
+
+    .nav {
+        color: orange;
+        /* 此时父类的权重是0,0,1,0 */
+    }
+
+    li {
+        color: yellow;
+        /* 此时子类继承父类的权重，
+        但是继承的权重为0,0,0,0
+        加上子类自身存在的权重0,0,0,1
+        所以子类此时的权重为0,0,0,1
+        颜色为子类颜色
+        */
+    }
+
+    .nav li {
+        color: green;
+        /* 此时权重为父类权重加上子类权重，颜色应该为绿色
+    权重为0,0,1,0加上0,0,0,1
+    应该为0，0，1，1
+    */
+    }
+
+
+    /* 把第一个Li颜色改为蓝色 */
+    .blue {
+        color: blue;
+        /* 不行，现在权重为0,0,0,1 */
+    }
+
+    .nav .blue {
+        color: yellowgreen
+            /* 可以，颜色为，权重是0,0,2,0
+        与上面相等，但是用层叠性的就近原则
+        所以颜色会变化 */
+
+    }
+
+    #blue {
+        color: deepskyblue;
+        /* 可以，权重为0,1,0,0
+        会变化颜色
+        */
+    }
+
+    .nav>li {
+        color: black;
+        /* 使用后代选择器，此时的权重小于0,0,1,1
+        权重为0，0，1，0
+        */
+    }
+</style>
+
+<body>
+    <ul class="nav">
+        <li class="blue">我也不知道我是什么颜色</li>
+        <li>我也不知道我是什么颜色</li>
+        <li>我也不知道我是什么颜色</li>
+        <li>我也不知道我是什么颜色</li>
+        <li>我也不知道我是什么颜色</li>
+    </ul>
+
+</body>
+
+</html>

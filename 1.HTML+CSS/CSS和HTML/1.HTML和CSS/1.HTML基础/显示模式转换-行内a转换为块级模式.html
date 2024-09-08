@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 让a的链接范围大一点，变色范围大一点 */
+        a {
+            width: 150px;
+            height: 50px;
+            background-color: red;
+            /* 转换为块级元素 */
+            display: block;
+        }
+
+        a:hover {
+            color: yellowgreen;
+            background-color: blue;
+        }
+
+        div {
+            width: 300px;
+            height: 100px;
+            background-color: aqua;
+            /* 转换为行内元素 */
+            display: inline;
+        }
+
+        span {
+            width: 200px;
+            height: 50px;
+            background-color: springgreen;
+            /* 转换为行内块元素display:inline-block */
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#">把行内元素转换为块级元素</a>
+
+    <div>我是块级元素</div>
+    <div>我是块级元素</div>
+
+    <span>行内元素转换为行内块元素</span>
+    <span>行内元素转换为行内块元素</span>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        height: 3000px;
+      }
+      img {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+      }
+    </style>
+    <script></script>
+  </head>
+
+  <body>
+    <img src="/1.HTML+CSS/cartoon/洛天依.png" alt="" />
+    <script>
+      var pic = document.querySelector("img");
+      // 鼠标事件对象 MouseEvent
+      document.addEventListener("click", function (e) {
+        // 1.client 鼠标在可视区域的x和y坐标
+        console.log(e.clientX);
+        console.log(e.clientY);
+        console.log("-----------------");
+        // 2.page 得到鼠标在页面文档的x和y坐标
+        console.log(e.pageX);
+        console.log(e.pageY);
+        console.log("-----------------");
+        // 3.screen 得到鼠标在店铺屏幕的x坐标
+        console.log(e.screenX);
+        console.log(e.screenY);
+      });
+      document.addEventListener("mousemove", function (e) {
+        // 1.mousemove 只要我们鼠标移动1px 就会触发这个事件
+        console.log(1);
+        // 2.每次移动鼠标 都会获得最新的鼠标坐标
+        var x = e.pageX;
+        var y = e.pageY;
+        console.log(x, y);
+      });
+      //   3.不要忘记给left添加px单位
+      pic.style.left = x - 40 + "px";
+      pic.style.top = y - 40 + "px";
+    </script>
+  </body>
+</html>

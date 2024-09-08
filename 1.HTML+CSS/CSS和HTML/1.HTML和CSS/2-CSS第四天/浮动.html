@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .div1 {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(0, 0, 0, .3);
+            /* 
+            f浮动最重要的特性:1.脱离标准流的控制浮动到指定位置，速成脱标
+            2.浮动的盒子不再保留原先的位置
+            */
+
+            /* 浮动特性2，盒子都设置了浮动的话，默认上对齐 */
+            /* 浮动特性3,任何元素都可以浮动。不管原来的元素是什么模式，
+            只要添加了浮动，就具有行内块相似的特性，可以设置宽高等
+            */
+
+            /* 先用标准流的父元素排列上下位置，之后内部子元素采取浮动排列左右位置
+            符合网页布局第一准则。
+            */
+            float: left;
+            border: 1px solid black;
+        }
+
+        .div2 {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div1">22</div>
+    <div class="div2">2233</div>
+
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        height: 3000px;
+      }
+      img {
+        width: 100px;
+        height: 100px;
+        position: fixed;
+        margin: 100px 200px;
+      }
+    </style>
+    <script></script>
+  </head>
+
+  <body>
+    <img src="/1.HTML+CSS/cartoon/初音.png" alt="" />
+    <button>点击按钮清除定时器</button>
+    <script>
+      //定时器是一个回调函数 上一件事干完，再回头调用这个函数
+      var img = document.querySelector("img");
+      var time1 = setTimeout(function () {
+        img.style.display = "none";
+      }, 5000);
+
+      //清除定时器 click也是回调函数
+      //clearTimeout() 清除掉定时器
+      var btn = document.querySelector("button");
+      btn.addEventListener("click", function () {
+        clearTimeout(time1);
+      });
+    </script>
+  </body>
+</html>

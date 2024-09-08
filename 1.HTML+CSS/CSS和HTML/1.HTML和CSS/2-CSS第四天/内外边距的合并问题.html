@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .green {
+            width: 300px;
+            height: 300px;
+            background-color: greenyellow;
+            margin-top: 100px;
+            /* 内外盒子塌陷的问题 */
+            /* 使两个盒子不会连在一起，单独定义盒子的外边距 */
+            /* 
+            也有其他2种方法，①为父元素定义边框，使用透明边框
+            ②为父元素定义内边距
+            */
+            overflow: hidden;
+        }
+
+        .blue {
+            width: 100px;
+            height: 100px;
+            background-color: blueviolet;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="green">
+        <div class="blue">
+
+        </div>
+    </div>
+
+</body>
+
+</html>

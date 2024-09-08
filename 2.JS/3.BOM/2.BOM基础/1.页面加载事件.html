@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+    <script>
+      // 传统方式，多个会有冲突，只能执行1个
+      // window.onload = function () {
+      //   var btn = document.querySelector("button");
+      //   btn.addEventListener("click", function () {
+      //     alert("弹出");
+      //   });
+      // };
+
+      //现在的方式
+      window.addEventListener("load", function () {
+        var btn = document.querySelector("button");
+        btn.addEventListener("click", function () {
+          alert("弹出");
+        });
+      });
+      window.addEventListener("load", function () {
+        alert(22);
+      });
+      document.addEventListener("DOMContentLoaded", function () {
+        alert(33);
+      });
+
+      //load等页面内容全部加载完毕，包含页面dom元素 图片
+      // DOMContentLoaded 是dom架子啊完毕，不包含图片，css等，所以速度要快一点
+    </script>
+  </head>
+
+  <body>
+    <button>点击</button>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li {
+            float: left;
+            width: 30px;
+            height: 30px;
+            border: 1px solid gold;
+            margin: 10px;
+            text-align: center;
+            line-height: 30px;
+            list-style: none;
+            border-radius: 50%;
+            /* 鼠标变成小手 */
+            cursor: pointer;
+            /* 加一个过渡 */
+            transition: all 0.5s;
+        }
+
+        li:hover {
+            /* 宽和高同时放大1.2倍 */
+            transform: scale(1.2);
+        }
+
+        /* 2D转换综合写法
+        1.同时使用多个转换,其格式为:transform:translate() rotate() ..
+        2.其顺序会影响转换的效果
+        3.当我们同时有位移和其他属性的时候,记得要将位移放到最前面
+        
+        */
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+    </ul>
+
+</body>
+
+</html>

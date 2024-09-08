@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .son {
+            position: absolute;
+            top: 30;
+            left: 20;
+            width: 200px;
+            height: 200px;
+            background-color: palegreen;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- 绝对定位的特点
+    position:absolute
+    1.如果祖先元素或者祖先元素没有定位，则以游览器为准定位
+    2.如果祖先元素有定位(相对、绝对、固定定位)，则以最近一级的有定位祖先元素为参考点移动位置
+    3.绝对定位不再占有原先的位置（脱标）
+    
+    绝对定位盒子的居中算法:
+    1.加了绝对定位的盒子不能通过margin:0 auto水平居中，但是可以通过以下计算实现水平和垂直居中
+    left:50%,left走百分之五十
+    margin 负值 往左边走 自己盒子宽度的一半
+    margin-left:-100px
+
+    top:50%
+    margin-top:-100px
+
+
+    -->
+    <div class="son">
+
+    </div>
+
+
+</body>
+
+</html>

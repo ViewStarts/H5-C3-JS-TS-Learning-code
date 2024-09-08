@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1'pink' 'pink老师' '12' 'true' 
+        //因为html标签的属性是双引号，所以js这里更推荐使用单引号
+        var str = '我是一个"高富帅"的程序员';//就近匹配 外双内单，外单内双
+        console.log(str);
+        var str1 = "我是一个'高富帅'的\n程序员";
+        console.log(str1);
+
+        // 字符串转义字符 都是用\开头，但是这些转义字符要写到引号里面
+        //  \n换行符 \\斜杠\ \t缩进 \b空格
+
+        // 2.1弹出网页警示框
+        var str2 = ('酷热难耐，火辣的太阳底下，我挺拔的身姿, 成为了最独特的风景,\n我审视四周,这里,是我的舞台,我就是天地间的王者。\n这一刻我豪气冲天, 终于大喊一声: "收破烂啦~"');
+        alert(str2);
+
+        // 3.1.检测获取字符串的长度 length
+        console.log(str2.length);
+        // 3.2 字符串拼接 + 只要字符串和其他类型拼接 最终的结果是字符串类型
+        // 数值相加，字符相连
+        console.log('今天' + '星期天');//字符串的 今天星期天
+        console.log('今天' + 18);//今天18
+
+        // 4.1字符串拼接加强
+        console.log('李骏' + 23);//李骏23
+        console.log('李骏' + 23 + '岁');//李骏23岁
+        var age = 23;
+        console.log('李骏' + age + '岁');//李骏23岁
+        //引引加加
+
+        // 5.1显示年龄案例
+        var age1 = prompt("请输入您的年龄");// 1.用户输入 
+        var age2 = '您今年' + age1 + "岁";// 2.age1保存用户的值
+        alert(age2);// 3.输出用户的值
+
+        var a3 = prompt('输入值然后输出值');
+        console.log(a3);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

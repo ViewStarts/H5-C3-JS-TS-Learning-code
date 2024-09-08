@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + TS</title>
+    <style>
+      .head {
+        display: flex;
+        width: 100%;
+        height: 50px;
+        background-color: #434a50;
+      }
+      .guanli,
+      .fabu {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+        border: 1px solid #cecece;
+        text-align: center;
+        color: white;
+      }
+
+      .main {
+        display: flex;
+        width: 100%;
+        height: 50px;
+      }
+      .guan01,
+      .fabu01 {
+        width: 50%;
+      }
+      .fabu01 {
+        margin-top: 30px;
+      }
+      .fabu01 div {
+        margin: 5px;
+      }
+
+      .zhuangtai {
+        display: flex;
+      }
+      .zhuangtai i {
+        display: block;
+        border-radius: 10px;
+        width: 40px;
+        height: 20px;
+        background-color: #cecece;
+      }
+      .zhuangtai i em {
+        display: block;
+        margin-left: 1px;
+        width: 18px;
+        height: 19px;
+        margin-top: 1px;
+        border-radius: 10px;
+        background-color: #ffffff;
+      }
+
+      #f_fabu {
+        background-color: #409eff;
+        border: 0;
+        color: white;
+      }
+      #chongzhi {
+        background-color: #f56c6c;
+        border: 0;
+        color: white;
+      }
+      .wenzhang-01 {
+        display: flex;
+        margin-top: 10px;
+      }
+
+      .wenzhang-01 div {
+        margin: 5px;
+      }
+      span {
+        margin: 5px;
+      }
+      .aaaaa {
+        margin-top: 10px;
+      }
+
+      .yangshi {
+        margin-left: 20px !important;
+        background-color: greenyellow !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="head">
+      <div class="guanli">文章管理</div>
+      <div class="fabu">文章发布</div>
+    </div>
+
+    <input type="text" placeholder="请输入修改内容" class="aaaaa" />
+    <div class="main">
+      <div class="guan01"></div>
+
+      <div class="fabu01"></div>
+    </div>
+
+    <script type="module">
+      import http from "./src/https.js";
+
+      //文章发布
+      bb();
+      a1();
+
+      function bb() {
+        let guanli01 = document.querySelector(".guan01");
+        // guanli01.innerHTML = "";
+        let fabu01 = document.querySelector(".fabu01");
+        fabu01.innerHTML = `
+        <div id="biaoti">文章标题<input type="text" /></div>
+        <div class="zhuangtai">
+          是否公开 <i><em></em></i>
+        </div>
+        <div id="neirong">内容<textarea></textarea></div>
+        <button id="f_fabu">发布</button>
+        <button id="chongzhi">重置</button>
+        `;
+        Fabu();
+      }
+
+      document.querySelector(".fabu").onclick = bb;
+      function Fabu() {
+        let fabu = document.querySelector("#f_fabu");
+        let chongzhi = document.querySelector("#chongzhi");
+        let gongkai = document.querySelector(".zhuangtai i ");
+        let em = document.querySelector(".zhuangtai i em");
+        let em_1 = false;
+        gongkai.onclick = () => {
+          if (em_1 == false) {
+            em_1 = true;
+            em.style.backgroundColor = "greenyellow";
+            em.style.marginLeft = "20px";
+          } else {
+            em_1 = false;
+            em.style.backgroundColor = "";
+            em.style.marginLeft = "";
+          }
+        };
+        //发布功能
+        fabu.onclick = () => {
+          let title = document.querySelector("#biaoti input").value;
+          let content = document.querySelector("#neirong textarea").value;
+          let status = em_1;
+          if (title == "" && content == "") {
+            alert("请输入标题和内容！");
+          } else {
+            let url = "/posts";
+            http
+              .request({
+                url,
+                method: "post",
+                data: {
+                  title,
+                  content,
+                  status,
+                },
+              })
+              .then((e) => {
+                console.log(e);
+                if (e.status == 201) {
+                  document.querySelector("#biaoti input").value = "";
+                  document.querySelector("#neirong textarea").value = "";
+                  if (em_1 == true) {
+                    em_1 = false;
+                    em.style.backgroundColor = "";
+                    em.style.marginLeft = "";
+                  }
+                  a1();
+                }
+              });
+          }
+        };
+
+        //重置功能
+        chongzhi.onclick = () => {
+          document.querySelector("#biaoti input").value = "";
+          document.querySelector("#neirong textarea").value = "";
+          if (em_1 == true) {
+            em_1 = false;
+            em.style.backgroundColor = "";
+            em.style.marginLeft = "";
+          }
+        };
+      }
+
+      let fabu01 = document.querySelector(".fabu01");
+      let guanli01 = document.querySelector(".guan01");
+
+      function a1() {
+        // fabu01.innerHTML = "";
+        let url = "/posts";
+        http
+          .request({
+            url,
+            method: "get",
+          })
+          .then((e) => {
+            let list = e.data;
+            let html = "";
+            list.reverse();
+            list.forEach((e, index) => {
+              console.log(e.status);
+              html += `
+        <div class='wenzhang-01'>
+          <span class='xiaoji'>${e.title}</span>
+         <span>${e.content}</span>
+         <div class="zhuangtai" >
+          是否公开 <i><em ${e.status ? 'class="yangshi"' : ""}></em></i>
+        </div>
+          <button onclick='update("${e.id}","${e.title}","${e.content}","${
+                e.status
+              }")'>编辑</button>
+          <button onclick='Delete("${e.id}")'>删除</button>
+        </div>`;
+            });
+
+            guanli01.innerHTML = html;
+          });
+      }
+
+      //文章管理
+      document.querySelector(".guanli").onclick = a1;
+
+      //删除
+      window.Delete = function (e) {
+        let url = "/posts/" + e;
+        console.log(url);
+        http
+          .request({
+            url,
+            method: "delete",
+          })
+          .then((e) => {
+            console.log(e);
+            a1();
+          });
+      };
+
+      //修改
+      window.update = function (id, title, content, status) {
+        let valu = document.querySelector(".aaaaa").value;
+        content = valu;
+        http
+          .request({
+            url: "/posts/" + id,
+            method: "patch",
+            data: {
+              title,
+              content,
+              status,
+            },
+          })
+          .then((e) => {
+            a1();
+          });
+      };
+    </script>
+  </body>
+</html>
