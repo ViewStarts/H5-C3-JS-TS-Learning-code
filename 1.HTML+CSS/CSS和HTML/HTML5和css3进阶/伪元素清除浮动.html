@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 伪类选择器 */
+        .clearfix::before,
+        .clearfix::after {
+            /* 伪类选择器必须先写 */
+            content: '';
+            /* 伪类选择器是行内元素，这样子是转化为块级元素，然后一行显示
+            清除浮动的话，前后盒子必须为块级元素
+            */
+            display: table;
+
+        }
+
+        .clearfix::after {
+            /* 清除浮动 */
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+
+</html>

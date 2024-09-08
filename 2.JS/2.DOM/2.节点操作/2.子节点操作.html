@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+    <script></script>
+  </head>
+
+  <body>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+    </ul>
+    <ol>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+    </ol>
+    <script>
+      var ul = document.querySelector("ul");
+      var lis = ul.querySelectorAll("li");
+      //   1.子节点 childNodes 所有的子节点 包含元素节点 文本节点等 不推荐使用
+      console.log(ul.childNodes);
+      console.log(ul.childNodes[0].nodeType);
+      console.log(ul.childNodes[1].nodeType);
+
+      //   2.children 获取所有的子元素节点 也是实际开发中常用的
+      console.log(ul.children);
+    </script>
+  </body>
+</html>

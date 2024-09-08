@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 额外标签法也叫隔墙法，把一个div置于最后一个浮动的后面
+        然后清除浮动即可。
+          额外标签法会在浮动元素末尾添加一个空的标签，例如div或者br等
+          注意:要求这个新的空标签必须是块级元素
+        */
+
+        /* 优点:通俗易懂，书写方便
+        缺点:添加了许多无意义的标签，结构化较差
+        */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            background-color: aquamarine;
+            border: 1px solid black;
+        }
+
+        .once {
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+            float: left;
+            margin-left: 5px;
+        }
+
+        .twoce {
+            width: 200px;
+            height: 200px;
+            background-color: black;
+            float: left;
+            margin-left: 5px;
+        }
+
+        .three {
+            width: 400px;
+            height: 200px;
+            background-color: greenyellow;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        .clearfix:after {
+            content: "";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box clearfix">
+        <div class="once"></div>
+        <div class="twoce"></div>
+        <div class="twoce"></div>
+        <div class="twoce"></div>
+        <div class="twoce"></div>
+        <div class="twoce"></div>
+        <div class="twoce"></div>
+    </div>
+    <div class="three"></div>
+    <div class="three"></div>
+
+</body>
+
+</html>

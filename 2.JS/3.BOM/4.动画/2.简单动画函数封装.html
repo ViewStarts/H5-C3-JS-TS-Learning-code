@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        position: absolute;
+        left: 0;
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+      }
+      .a2 {
+        margin-top: 200px;
+      }
+      span {
+        position: fixed;
+        width: 100px;
+        height: 100px;
+        background-color: aqua;
+        left: 0;
+      }
+    </style>
+    <script></script>
+  </head>
+
+  <body>
+    <div class="a1"></div>
+    <div class="a2"></div>
+    <span></span>
+    <script>
+      //简单动画函数封装obj目标对象 target目标位置
+      function animate(obj, target) {
+        var time = setInterval(function () {
+          if (obj.offsetLeft >= target) {
+            //停止动画 本质是停止定时器
+            clearInterval(time);
+          }
+          obj.style.left = obj.offsetLeft + 10 + "px";
+        }, 30);
+      }
+      var a1 = document.querySelector(".a1");
+      var a2 = document.querySelector(".a2");
+      animate(a1, 400);
+      animate(a2, 500);
+
+      var span = document.querySelector("span");
+      setInterval(function () {
+        span.style.left = span.offsetLeft + 10 + "px";
+      }, 30);
+    </script>
+  </body>
+</html>

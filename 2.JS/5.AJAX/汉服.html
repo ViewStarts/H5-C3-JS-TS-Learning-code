@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #list {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      li {
+        width: 200px;
+        height: 300px;
+        list-style: none;
+        margin: 10px;
+      }
+      img {
+        width: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="checkbox" />全选
+    <ul id="list"></ul>
+    <button onclick="next()">下一页</button>
+
+    <script>
+      let page = 1;
+      list();
+      //列表
+      function list() {
+        let lijun = new XMLHttpRequest();
+        let url = `https://api5.hanfuhui.com/Product/GetProductListPublic?count=20&page=${page}`;
+        lijun.open("GET", url);
+        lijun.send();
+        lijun.onload = function () {
+          if (lijun.status <= 200) {
+            let obj = JSON.parse(lijun.responseText);
+            let ul = document.querySelector("ul");
+            let shuju = obj.Data;
+            shuju.map((item) => {
+              ul.innerHTML += `<li>
+               <div><input type="checkbox" /></div>
+              <div>名称:${item.Name}</div>
+              <div><img src="${item.FaceSrc}" alt=""></div>
+              <div>价格:${item.BasePrice} </div>
+              <button>删除</button><br>
+              </li>`;
+            });
+          }
+        };
+      }
+
+      //点击进入下一页
+      function next() {
+        page++;
+        list(page);
+      }
+
+      // 检查是否滚动到底部
+      function checkScroll() {
+        const windowHeight = window.innerHeight;
+        const scrollTop =
+          document.documentElement.scrollTop || document.body.scrollTop;
+        const scrollHeight =
+          document.documentElement.scrollHeight || document.body.scrollHeight;
+
+        if (scrollTop + windowHeight >= scrollHeight - 50) {
+          // 距离底部还有 50px 时触发
+          next();
+        }
+      }
+
+      // 监听滚动事件
+      window.addEventListener("scroll", checkScroll);
+    </script>
+  </body>
+</html>

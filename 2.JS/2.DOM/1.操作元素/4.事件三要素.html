@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        background-color: aqua;
+      }
+    </style>
+    <script></script>
+  </head>
+
+  <body>
+    <button id="btn">2024-06-16</button>
+    <div id="d1">123</div>
+    <script>
+      //点击一个按钮，弹出对话框
+      //1. 事件是有三部分组成 事件源 事件类型 事件处理程序 我们也称为事件三要素
+      //(1)事件源 事件被触发的对象 谁 按钮
+      var btn = document.getElementById("btn");
+      //(2)事件类型 如何触发 什么事件 比如鼠标点击(onclick) 还是鼠标经过 还是键盘按下
+      //(3)事件处理程序 通过一个函数赋值的方式 完成
+      btn.onclick = function () {
+        alert("我的天");
+      };
+      //1.那个对象要触发，怎么触发，是通过什么方式 最后事件触发以后结果是什么
+
+      //1.获取事件源
+      var d1 = document.querySelector("div");
+      //2.绑定事件 注册事件  d1.onclick
+      d1.onclick = function () {
+        //3.通过function函数 添加事件处理程序
+        alert("我被点击了");
+      };
+
+      //鼠标经过触发
+      var d1 = document.querySelector("div");
+      d1.onmouseover = function () {
+        alert("我被经过了");
+      };
+    </script>
+  </body>
+</html>

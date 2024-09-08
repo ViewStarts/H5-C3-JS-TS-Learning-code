@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        color: greenyellow;
+        font: 12px/1.5;
+        /* 1.5是行高，指的是子元素本身的行高乘以1.5倍 */
+        /* 行高可以跟单位也可以不跟单位 */
+    }
+
+    div {
+        /* 子元素继承body父元素行高的1.5倍。
+        也就是14px*1.5，当前元素文字大小的1.5倍
+        */
+        font-size: 14px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    /* li没有指定文字大小，则会继承body的文字大小12px */
+</style>
+
+<body>
+    <div>2023年11月11日</div>
+    <p>2023年12月12日</p>
+    <li>没有指定文字大小</li>
+</body>
+
+</html>

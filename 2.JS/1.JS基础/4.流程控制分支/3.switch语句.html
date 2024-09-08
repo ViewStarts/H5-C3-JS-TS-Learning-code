@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*  switch (表达式) {
+             case value1:
+                 执行语句1;
+                 break;
+             case value2:
+                 执行语句2;
+                 break;
+             default:
+                 执行最后的语句;
+                 break;
+         }
+  */
+        var age = prompt('请输入你的年龄:');
+        console.log(typeof age);
+        switch (parseFloat(age)) {
+            case 18:
+                console.log('你是成年人');
+                break;
+            case 16:
+                console.log('你是未成年人');
+                break;
+            case 10:
+                console.log('你未满16岁');
+                break;
+            default:
+                console.log('你是小学生');
+                break;
+        }
+        //1.写变量
+        //2.我们num的值和case的值相匹配的时候必须是全等
+        //3.如果没有break，则不会退出switch，是继续执行下一个case，不管匹配不匹配都执行
+
+
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

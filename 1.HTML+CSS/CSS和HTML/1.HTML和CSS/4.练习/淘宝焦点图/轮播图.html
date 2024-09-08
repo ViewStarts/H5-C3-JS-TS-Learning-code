@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .tb-promo {
+            /* 子绝父相 */
+            position: relative;
+            width: 752px;
+            height: 376px;
+            /* background-color: aqua; */
+            /* 相对定位不脱离标准流，所以可以用margin来水平居中 */
+            margin: 100px auto;
+
+        }
+
+        .tb-promo img {
+            width: 752px;
+            height: 376px;
+        }
+
+
+        .tb-promo a {
+            text-decoration: none;
+        }
+
+        /* 并集选择器可以集体声明相同的样式 */
+        .prev,
+        .next {
+            position: absolute;
+            /* 绝对定位盒子垂直居中 */
+            top: 50%;
+            margin-top: -15px;
+            /* 加了绝对定位的盒子可以直接设置高度和宽度 */
+            width: 20px;
+            height: 30px;
+            background-color: rgba(0, 0, 0, .3);
+            /* 使用绝对定位，绝对定位不占有位置 */
+            line-height: 30px;
+            color: #fff;
+            text-align: center;
+        }
+
+        .prev {
+            left: 0;
+            /* 圆角边框 */
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+            /* text-align: center; */
+
+        }
+
+        .next {
+            /* 如果一个盒子既有left属性也有right属性也有right属性，则默认会执行left属性
+            同理 top bottom 会先执行top属性
+            
+            */
+            right: 0;
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+        }
+
+        .promo-nav {
+            position: absolute;
+            width: 70px;
+            height: 13px;
+            bottom: 15px;
+            left: 50%;
+            margin-left: -35px;
+            background-color: rgba(255, 255, 255, .3);
+            border-radius: 7px;
+        }
+
+        .promo-nav li {
+            float: left;
+            width: 8px;
+            height: 8px;
+            background-color: #fff;
+            border-radius: 50%;
+            margin: 3px;
+        }
+
+        .promo-nav .diyi {
+            background-color: #ff5000;
+        }
+
+        /* .promo-nav li:hover {
+            background-color: #ff5000;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="tb-promo">
+        <img src="/Img/王者荣耀轮播图1.jpg" alt="">
+        <!-- 左侧按钮箭头 -->
+        <a href="#" class="prev">&lt;</a>
+        <a href="#" class="next">&gt;</a>
+
+        <!-- 小圆点 -->
+        <ul class="promo-nav">
+            <li class="diyi"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+</body>
+
+</html>

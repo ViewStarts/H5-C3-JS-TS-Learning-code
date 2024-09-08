@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+    <script></script>
+  </head>
+
+  <body>
+    <script>
+      const str = "我的天呐，今天是2024年7月4日，星期天，请把天替换掉";
+      //1.定义规则
+      const reg = /天/;
+      //2.是否匹配
+      console.log(reg.test(str)); //true
+      //   3.exec()
+      console.log(reg.exec(str)); //返回数组
+
+      // （1）元字符
+      // 边界符  ^必须要以我开头，不然就fasle
+      // $必须要以掉结尾 不然false
+      // 如果^和$一起，表示必须是精确匹配，必须要一模一样，以什么开头，以什么结尾
+      console.log(/^我/.test(str));
+      console.log(/^掉$/.test("掉掉"));
+      console.log(/^掉$/.test("掉"));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      img {
+        width: 100px;
+      }
+      ul {
+        display: flex;
+      }
+      li {
+        margin: 5px;
+        width: 300px;
+        height: 200px;
+      }
+      div {
+        margin: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <!-- <li>
+        <div></div>
+        <div></div>
+        <div></div>
+      </li> -->
+      <!-- <img src="" alt=""> -->
+    </ul>
+
+    <script type="module">
+      import http from "./TS/1.注册.ts";
+
+      //列表
+      list();
+      function list() {
+        let id = localStorage.getItem("userid");
+        let url = "/cart/list";
+        http
+          .request({
+            url,
+            params: {
+              id,
+            },
+          })
+          .then((e) => {
+            console.log(e.data.cart);
+            let cart = e.data.cart;
+            let html = "";
+            cart.forEach((e) => {
+              html += `<li>
+            <div>
+                <input type="checkbox" onchange='update(${e.goods_id})'
+                ${e.is_select ? "checked" : ""}
+                >
+                 <img src="${e.img_small_logo}" alt="">
+             </div>
+            <div>
+                ${e.title}
+            </div>
+            <div>
+                价格是:${e.current_price}
+            </div>
+            <div>
+               <button  onclick="Delete(${e.goods_id})">删除</button>
+               <button onclick='jia(${e.goods_id},${e.cart_number})'>+</button>
+               <span>${e.cart_number}</span>
+               <button onclick='jian(${e.goods_id},${e.cart_number})'>-</button>
+            </div>
+            <span>总价:${e.cart_number * e.current_price}</span>
+      </li>`;
+            });
+            document.querySelector("ul").innerHTML = html;
+          });
+      }
+
+      //删除
+      window.Delete = async function (goodid) {
+        let userid = localStorage.getItem("userid");
+        let url = "/cart/remove";
+        await http
+          .request({
+            url,
+            method: "get",
+            params: {
+              id: userid,
+              goodsId: goodid,
+            },
+          })
+          .then((e) => {
+            list();
+          });
+      };
+
+      //修改
+      window.update = async function (goodid) {
+        let userid = localStorage.getItem("userid");
+        let url = "/cart/select";
+        await http
+          .request({
+            url,
+            method: "post",
+            data: {
+              id: userid,
+              goodsId: goodid,
+            },
+          })
+          .then((e) => {
+            console.log(e);
+          });
+      };
+
+      //加
+      window.jia = async function (goodid, number) {
+        let userid = localStorage.getItem("userid");
+        number++;
+        let url = "/cart/number";
+        http
+          .request({
+            url,
+            method: "post",
+            data: {
+              id: userid,
+              goodsId: goodid,
+              number,
+            },
+          })
+          .then((e) => {
+            list();
+          });
+      };
+
+      //减
+      window.jian = async function (goodid, number) {
+        let userid = localStorage.getItem("userid");
+        number--;
+        let url = "/cart/number";
+        http
+          .request({
+            url,
+            method: "post",
+            data: {
+              id: userid,
+              goodsId: goodid,
+              number,
+            },
+          })
+          .then((e) => {
+            list();
+          });
+      };
+    </script>
+  </body>
+</html>

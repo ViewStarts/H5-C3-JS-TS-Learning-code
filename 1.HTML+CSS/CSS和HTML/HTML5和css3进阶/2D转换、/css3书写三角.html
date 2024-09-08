@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            /* background-color: aquamarine; */
+            border: 1px solid #000;
+            /* 谁做动画给谁加 */
+            transition: all 0.3s;
+
+            /* 设置转换中心点 */
+            /* 1.可以跟方位名词 */
+            /* transform-origin: left bottom; */
+            /* 2.默认的是50% 50% 等价于center center */
+            /* 3.可以是Px像素 */
+            transform-origin: 50px 50px;
+        }
+
+        div::after {
+            content: "";
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            width: 5px;
+            height: 5px;
+            border-right: 1px solid #000;
+            border-bottom: 1px solid #000;
+            transform: rotate(45deg);
+            transition: all 0.3s;
+        }
+
+        div:hover::after {
+            transform: rotate(225deg);
+        }
+
+        div:hover {
+            transform: rotate(225deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+
+    </div>
+
+</body>
+
+</html>

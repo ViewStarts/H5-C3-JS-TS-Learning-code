@@ -1,0 +1,51 @@
+body {
+    font: 16px/28px 'Microsoft YaHei';
+}
+
+h1 {
+    text-align: center;
+    /* font-weight: normal; */
+    font-weight: 400;
+    /*不加粗*/
+
+}
+
+.chaxun {
+    text-align: center;
+    color: #888888;
+    font-size: 12px;
+}
+
+.search {
+    color: #666666;
+    width: 170px;
+}
+
+.zhongguoqixiangwang {
+    color: blue;
+    text-decoration: none;
+}
+
+.luotianyi {
+    width: 50%;
+    height: 50%;
+
+}
+
+.ptian {
+    text-align: center;
+}
+
+.btn {
+    font-weight: 700;
+}
+
+p {
+    /* 首行缩进2字符 */
+    text-indent: 2em;
+}
+
+.footer {
+    color: #888888;
+    font-size: 12px;
+}

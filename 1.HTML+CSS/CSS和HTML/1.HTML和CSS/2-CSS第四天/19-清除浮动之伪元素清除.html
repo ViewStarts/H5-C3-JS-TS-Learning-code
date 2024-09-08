@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>伪元素清除浮动</title>
+    <style>
+        /* 
+        :after方式是额外标签法的升级版，也是给父元素添加
+
+        利用css在盒子最后添加了一个盒子，高度为0，也是和额外标签法一样，
+        最后的那个盒子清除浮动。只不过一个是html,一个是css。
+
+        结构方面，这样子的结构比较清晰
+        
+        */
+        /* 优点:没有增加标签，结构更简单
+        缺点:照顾低版本游览器
+        */
+
+        /* 调用类  after在父元素里面在添加盒子*/
+        .clearfix:after {
+            content: "";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+
+        /* 清除浮动，照顾低版本游览器需要这个 */
+        .clearfix {
+            /* IE6、7 专有 */
+            zoom: 1;
+        }
+
+        .box {
+            width: 800px;
+            border: 1px solid blue;
+            margin: 0 auto;
+        }
+
+        .damao {
+            float: left;
+            width: 300px;
+            height: 200px;
+            background-color: purple;
+        }
+
+        .ermao {
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+
+        .footer {
+            height: 200px;
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 哪个盒子要清除浮动，就直接在盒子后面空格，写上clearfix就行了 -->
+    <div class="box clearfix">
+        <div class="damao">大毛</div>
+        <div class="ermao">二毛</div>
+    </div>
+    <div class="footer"></div>
+
+</body>
+
+</html>

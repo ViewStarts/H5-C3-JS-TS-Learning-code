@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 把ol的li选出来 */
+        /* 后代选择器 */
+        ol li {
+            color: blue;
+        }
+
+        ol li a {
+            color: red;
+        }
+
+        .nav li {
+            color: yellow;
+        }
+
+        /* 子选择器，只选择最近的次级 */
+        ol>p {
+            color: red;
+        }
+    </style>
+
+</head>
+
+<body>
+    <ol>
+        <li>
+            我爱你一生一世。
+        </li>
+        <li>
+            <a href="#">我不想你了</a>
+        </li>
+    </ol>
+
+    <ol>
+        <p>我不爱你了</p>
+        <li>我的天那</li>
+
+    </ol>
+
+    <ul>
+        <li>
+            我不爱你。。
+        </li>
+    </ul>
+
+
+    <ul class="nav">
+        <li>
+            我不爱你。。
+        </li>
+    </ul>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //1.if的语法结构
+        /*  if (3 < 5) {
+             //执行语句
+             console.log('真的');
+         } */
+        //2.执行思路 如果if的里面的条件表达式结构为true 则执行括号里的语句
+        //如果if的结构为false 则不执行大括号里面的语句 则执行If语句后面的语句
+
+        //进入网吧案例
+        /*   var age = prompt('请输入你的年龄:');
+          if (age >= 18) {
+              console.log('你可以进入网吧');
+          } else {
+              console.log('你不能进入网吧');
+          } */
+
+        //判断闰年案例
+        //算法:能被4整除且不能整除100的为闰年(如2004是闰年，1901不是闰年)
+        //或者能被400整除的就是闰年
+        /*  var year = prompt('请输入年份:');
+         if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+             console.log('是闰年');
+         } else {
+             console.log('是平年');
+         } */
+
+        //判断是否中奖
+        /* var name = prompt('请输入你的姓名:');
+        if (name == '刘德华') {
+            console.log('你中了5块钱');
+        } else {
+            console.log('你没有中奖');
+        } */
+
+        // 1.多分支语句
+        /*   if (条件表达式1) {
+              //语句1
+          } else if (条件表达式2) {
+  
+          } else if (条件表达式3) {
+  
+          } else {
+              //最后的语句
+          } */
+        var score = prompt('请输入你的成绩');
+        if (score >= 90) {
+            console.log('A');
+        } else if (score >= 80) {
+            console.log('B');
+        } else if (score >= 70) {
+            console.log('C');
+        } else if (score >= 60) {
+            console.log('D');
+        } else {
+            console.log('E');
+        }
+
+
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

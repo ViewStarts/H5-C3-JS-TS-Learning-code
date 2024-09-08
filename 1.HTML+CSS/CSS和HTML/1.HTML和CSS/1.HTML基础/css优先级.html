@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* css优先级
+    继承<元素选择器<类选择器<id选择器<行内样式<!important
+    继承的权重为0,父类的权重不会给子类
+
+    权重表
+    继承是0，0，0，0
+    元素选择器 0，0，0，1
+    类选择器 0，0，1，0
+    id选择器0,1,0,0
+    行内样式1,0,0,0
+    important 无穷大
+
+    */
+
+    .test {
+        color: red;
+    }
+
+    div {
+        color: pink !important;
+        /* 优先级最高 */
+    }
+
+    #demo {
+        color: green;
+    }
+
+    body {
+        color: red;
+    }
+
+
+    /* 权重的叠加 权重可以叠加，但是永远不会进位 */
+    ul li {
+        color: green;
+        /* ul li的权重是0,0,0,1加上li的0，0，0，1
+        所以是0，0，0，2
+        */
+    }
+
+    /* 此时li的权重是0，0，0，1 */
+    li {
+        color: red;
+    }
+
+    /* 此时nav li的权重是0,0,1,0加上0,0,0,1
+    所以是0,0,1,1
+    */
+    .nav li {
+        color: pink;
+    }
+</style>
+
+<body>
+    <div class="test" id="demo" style="color: purple;">
+        你笑起来真好看！
+    </div>
+
+    <!-- a标签之所以没有继承Body标签的颜色，是因为游览器会单独给a
+标签一个样式，继承的优先级小于元素选择器的优先级，所以a的标签
+不会继承body的颜色 a{color:blue}
+-->
+    <a href="#">单独的样式</a>
+
+
+    <ul class="nav1">
+
+        <li>我是1</li>
+        <li>我是2</li>
+        <li>我是3</li>
+
+    </ul>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            perspective: 300px;
+        }
+
+        img {
+            display: inline-block;
+            margin: 100px 50px;
+            width: 300px;
+            height: 400px;
+            background-color: aqua;
+            transition: all 1s;
+        }
+
+        img:hover {
+            /* x轴是横着的，越往上值越大，所以方向是朝上的 */
+            transform: rotateX(360deg);
+        }
+
+        .i1:hover {
+            /* Y轴是竖着的，越往右值越大，所以方向是朝右边旋转 */
+            transform: rotateY(360deg);
+        }
+
+        .i2:hover {
+            /* z轴旋转跟2d差不多，像转盘一样沿着顺时针旋转 */
+            transform: rotateZ(180deg);
+
+            /* transform: rotate3d(x,y,z,deg); */
+        }
+    </style>
+</head>
+
+<body>
+    <img src="/Web/1.HTML5+CSS3/cartoon/理之旅者.jpg" alt="">
+    <img src="/Web/1.HTML5+CSS3/cartoon/初音.png" alt="" class="i1">
+    <img src="/Web/1.HTML5+CSS3/cartoon/洛天依.png" alt="" class="i2">
+
+</body>
+
+</html>

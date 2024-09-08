@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            /* 给父级添加flex属性 */
+            display: flex;
+            width: 600px;
+            height: 400px;
+            background-color: aqua;
+            /* justify-content: space-around; */
+
+            /* 默认的主轴是x轴 行row  那么y轴就算侧轴*/
+            /* 我们的元素是跟着主轴来排列的 */
+            /* 默认的：flex-direction: row; */
+
+            /*简单了解：翻转 flex-direction: row-reverse; */
+
+            /* 我们可以把我们的主轴设置为Y轴 那么x轴就成了侧轴 */
+            /* flex-direction: column; */
+
+            /* flex-direction: column-reverse; */
+
+            flex-wrap: wrap;
+            /* 单行侧轴对齐用align-items */
+            /* 多行侧轴对齐用align-content: ; */
+
+            /* 把社渚主轴方向和是否换行进行综合写法 */
+            /* flex-flow: row wrap; */
+        }
+
+        div span {
+            width: 150px;
+            height: 100px;
+            background-color: yellow;
+            margin: 5px;
+            /*把剩余空间铺满 */
+            /* flex: 1; */
+
+            /* flex布局中，默认的子元素是不换行的，如果装不开，会缩小子元素的宽度，放到父元素里面 */
+            /* flex-wrap: wrap; 默认是nowrap不换行 */
+
+
+        }
+
+        .a4 {
+            flex: 1;
+        }
+
+        .a5 {
+            /* 分配剩余空间，大盒子空间的1就是全部 */
+            /* flex: 1; */
+        }
+
+        div span:nth-child(3) {
+            /* 第一个盒子默认-，-1小于0。所以再前面 */
+            order: -1;
+
+        }
+
+        div span:nth-child(2) {
+            /* 控制某一个子项再侧轴的位置 */
+            align-self: flex-end;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span class="a4">4</span>
+        <span class="a5">5</span>
+
+    </div>
+
+</body>
+
+</html>

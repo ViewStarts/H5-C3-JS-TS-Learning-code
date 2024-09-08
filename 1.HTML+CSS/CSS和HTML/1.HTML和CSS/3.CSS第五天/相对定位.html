@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .xiangdui {
+            position: relative;
+            top: 10px;
+            left: 50px;
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine;
+        }
+
+        .test {
+            width: 100px;
+            height: 100px;
+            background-color: black;
+        }
+    </style>
+</head>
+
+
+<body>
+    <!-- 定位组成
+    定位=定位模式+边偏移
+
+定位模式:  static 静态定位 position:static; 标准流，没有边偏移
+           relative 相对定位
+           absolute 绝对定位
+           fixed 固定定位
+
+    边偏移: 把定位盒子移动到最终位置
+    top bottom left right
+    -->
+
+    <!-- 相对定位: -->
+    <!-- 相对定位，是根据自身原有的位置，来进行设定边偏移和移动 -->
+    <!-- 如果盒子移动了，但是原来位置依旧保留。下面的盒子不会挤上去 -->
+    <!-- 2个特点:
+        1.他是相对于自己原来的位置来移动的(移动位置的时候参照点是自己原来的位置)
+        2.原来在标准流的位置继续占有，后面的盒子仍然以标准流的方式对待他(不脱标，继续保留原来的位置)
+    -->
+    <div class="xiangdui">
+
+    </div>
+
+    <div class="test">
+
+    </div>
+
+
+
+
+
+</body>
+
+</html>

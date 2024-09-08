@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input,
+        textarea {
+            outline: 0;
+        }
+
+        textarea {
+            resize: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 鼠标样式
+    default  小白默认   pointer 小手
+    move 移动   text 文本   not-allowed 禁止
+    -->
+    <ul>
+        <li style="cursor: default">鼠标移到这个页面变成小白形状</li>
+        <li style="cursor: pointer;">鼠标移到这个页面变成小手形状</li>
+        <li style="cursor: move;">鼠标移到这个页面变成移动形状</li>
+        <li style="cursor: text;">鼠标移到这个页面变成文本形状</li>
+        <li style="cursor: not-allowed;">鼠标移到这个页面变成禁止形状</li>
+
+    </ul>
+
+    <!-- 1.取消表单轮廓线
+    给表单添加outline:0,或者outline:none样式，就可以去掉默认的蓝色边框线
+    -->
+    <input type="text">
+
+    <!-- 2.防止拖拽文本域
+        resize -->
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+
+
+</body>
+
+</html>

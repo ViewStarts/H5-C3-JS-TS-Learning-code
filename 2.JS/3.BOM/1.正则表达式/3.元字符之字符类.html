@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+    <script></script>
+  </head>
+
+  <body>
+    <script>
+      //字符类 [abc] 只选1个
+      console.log(/^[abc]$/.test("a")); //true
+      console.log(/^[abc]$/.test("b")); //true
+      console.log(/^[abc]$/.test("c")); //true
+      console.log(/^[abc]$/.test("ab")); //false
+      console.log(/[abc]/.test("ab")); //true
+      //多选1加量词
+      console.log(/^[abc]{2}$/.test("ab")); //true
+      console.log("-------------------------------------");
+
+      //字符类 [abc] 只选1个
+      console.log(/^[a-z]$/.test("p")); //true
+      console.log(/^[A-Z]$/.test("A")); //true
+      console.log(/^[a-zA-Z0-9]$/.test("2")); //true
+      console.log("-------------------------------------");
+
+      //腾讯qq号:/^[1-9][0-9]{4,}/ 从10000开始
+
+      // .匹配除了换行符之外的任何单个字符
+      // [^]取反
+
+      //邮箱
+      //   console.log(/^[a-zA-Z0-9]{10}[@][]$/);
+    </script>
+  </body>
+</html>

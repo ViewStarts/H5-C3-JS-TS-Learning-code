@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>什么是浮动</title>
+    <style>
+        /* 网页里面，纵向排列找标准流
+        横向排列找浮动
+
+        网页布局第一准则:多个块级元素纵向排列找标准流
+        多个块级元素横向排列找浮动
+        */
+        .left,
+        .right {
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+
+        .right {
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="left">左青龙</div>
+    <div class="right">右白虎</div>
+</body>
+
+</html>

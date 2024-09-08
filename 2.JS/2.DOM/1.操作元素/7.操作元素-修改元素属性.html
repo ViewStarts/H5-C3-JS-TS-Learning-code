@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      img {
+        width: 400px;
+        height: 400px;
+      }
+    </style>
+    <script></script>
+  </head>
+
+  <body>
+    <button id="cy">初音</button>
+    <button id="lty">洛天依</button><br />
+    <img src="../../1.HTML+CSS/cartoon/初音.png" alt="" title="初音" />
+    <script>
+      //修改元素属性 src
+      //1.获取元素
+      var cy = document.getElementById("cy");
+      var lty = document.getElementById("lty");
+      var img = document.querySelector("img");
+
+      //2.注册事件 处理程序
+      lty.onclick = function () {
+        img.src = "../../1.HTML+CSS/cartoon/洛天依.png";
+        img.title = "洛天依";
+      };
+      cy.onclick = function () {
+        img.src = "../../1.HTML+CSS/cartoon/初音.png";
+        img.title = "初音";
+      };
+    </script>
+  </body>
+</html>

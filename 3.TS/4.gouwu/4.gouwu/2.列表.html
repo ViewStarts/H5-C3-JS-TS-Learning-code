@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      img {
+        width: 100px;
+      }
+      a {
+        text-decoration: none;
+        color: black;
+      }
+      li {
+        list-style: none;
+        margin: 5px;
+        width: 300px;
+        height: 200px;
+      }
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      div {
+        margin-bottom: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <!-- 
+      <div></div>
+      <div>
+        <span></span>
+        <span></span>
+      </div> 
+      -->
+    </ul>
+    <script type="module">
+      import http from "./TS/1.注册.ts";
+
+      function list() {
+        let url = "/goods/list";
+        http
+          .request({
+            url,
+            params: {
+              pagesize: 10,
+            },
+          })
+          .then((e) => {
+            let data = e.data.list;
+            console.log(data);
+            let html = "";
+            data.forEach((item) => {
+              html += `<li>
+                <a href="./3.详情.html?id=${item.goods_id}" >
+                  <div>
+              <img src="${item.img_big_logo}" alt="">
+            </div>
+            <div>
+              <span>${item.title}</span><br>
+              <span>价格:${item.price}</span>
+            </div>
+                  </a>
+            </li>`;
+            });
+            document.querySelector("ul").innerHTML = html;
+          });
+      }
+      list();
+    </script>
+  </body>
+</html>

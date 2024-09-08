@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+    <script></script>
+  </head>
+
+  <body>
+    <button>点击</button>
+    <div></div>
+    <script>
+      var btn = document.querySelector("button");
+      var div = document.querySelector("div");
+
+      btn.addEventListener("click", function () {
+        console.log(location.href);
+      });
+      var timer = 5;
+      times();
+      setInterval(function () {
+        if (timer == 0) {
+          location.href =
+            "http://127.0.0.1:5500/2.Js/3.BOM/9.5%E7%A7%92%E9%92%9F%E4%B9%8B%E5%90%8E%E8%B0%83%E6%95%B4%E9%A1%B5%E9%9D%A2.html";
+        } else {
+          times();
+        }
+      }, 1000);
+      function times() {
+        div.innerHTML = "您将再" + timer + "秒钟之后跳转到首页";
+        timer--;
+      }
+    </script>
+  </body>
+</html>

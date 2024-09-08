@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      img {
+        width: 100px;
+      }
+      div {
+        margin: 5px;
+      }
+      input {
+        margin: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <input type="button" value="加入购物车" />
+    <br />
+    <input type="button" value="进入购物车" id="jinru" />
+
+    <script type="module">
+      import http from "./TS/1.注册.ts";
+
+      let serach = new URLSearchParams(location.search);
+      let id = serach.get("id");
+      let url = "/goods/item/" + id;
+      let div = document.querySelectorAll("div");
+      http
+        .request({
+          url,
+          params: {
+            id,
+          },
+        })
+        .then((e) => {
+          console.log(e.data);
+          if (e.data.code == 1) {
+            div[0].innerHTML = `<img src="${e.data.info.img_big_logo}" alt="">`;
+            div[1].innerHTML = `${e.data.info.title}`;
+            div[2].innerHTML = `价格:${e.data.info.price}`;
+          } else {
+            alert("失败");
+          }
+        });
+
+      let btn = document.querySelector("input");
+      btn.addEventListener("click", () => {
+        let url = "/cart/add";
+        let userid = localStorage.getItem("userid");
+        // console.log(userid);
+        // console.log(id);
+        http
+          .request({
+            url,
+            method: "post",
+            data: {
+              id: userid,
+              goodsId: id,
+            },
+          })
+          .then((e) => {
+            alert("加入购物车成功!");
+          })
+          .catch((e) => {
+            console.log("加入购物车失败");
+          });
+      });
+
+      let jinru = document.querySelector("#jinru");
+      jinru.addEventListener("click", () => {
+        location.href = "./4.购物车.html";
+      });
+    </script>
+  </body>
+</html>

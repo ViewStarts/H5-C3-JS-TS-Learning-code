@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 200px;
+        height: 200px;
+        background-color: aqua;
+        padding: 100px;
+      }
+    </style>
+    <script></script>
+  </head>
+
+  <body>
+    <div class="box" style="width: 200px"></div>
+    <script>
+      //offset与style的区别
+      var box = document.querySelector(".box");
+      console.log(box.offsetWidth);
+      console.log(box.style.width);
+      //   box.offsetWidth = "300px";
+      box.style.width = "300px";
+      //1.获取元素大小位置，用offset
+      //想要给元素更改大小，用style
+    </script>
+  </body>
+</html>

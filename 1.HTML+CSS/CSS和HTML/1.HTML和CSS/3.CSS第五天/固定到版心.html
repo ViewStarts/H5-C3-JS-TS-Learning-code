@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .w {
+            width: 800px;
+            height: 1400px;
+            background-color: palegreen;
+            margin: 0 auto;
+            right: 34%;
+        }
+
+        .fixed {
+            /* 1.先改成固定定位 */
+            position: fixed;
+            /* 2.走游览器宽度的一半 */
+            left: 50%;
+            /* 3.利用margin 再走版心的一半 */
+            margin-left: 405px;
+            width: 50px;
+            height: 150px;
+
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+1.让固定定位的盒子left:50%，走到游览器可视区域（也可以看作版心）的一半位置
+2.让固定定位的盒子margin-left:版心宽度的一般距离。多走版心宽度的一半位置
+     -->
+    <div class="fixed">
+
+    </div>
+    <div class="w">
+        版心盒子 800像素
+    </div>
+
+</body>
+
+</html>

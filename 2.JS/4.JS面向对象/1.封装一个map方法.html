@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //1.封装一个map方法
+      let a1 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+      Array.prototype.Limap = function (e) {
+        let b1 = [];
+        for (let i = 0; i < this.length; i++) {
+          // b1.push(e(this[i], i));
+          e(this[i], i);
+          b1[i] = this[i];
+        }
+        return b1;
+      };
+
+      let a2 = a1.Limap(function (item, index) {
+        return item * 100;
+      });
+      console.log(a2);
+
+      // foreach
+      /*    Array.prototype.myforeach = function (e) {
+         for (let i = 0; i < this.length; i++) {
+           e(this[i], i);
+         }
+         return e;
+       };
+       let a3 = a1.myforeach(function (item, index) {
+         console.log(item);
+         console.log("索引" + index);
+       }); */
+
+      function ar(item, index) {
+        this.item = item;
+        this.index = index;
+      }
+
+      ar.prototype.wode = function (e) {
+        console.log(1);
+      };
+
+      let c1 = new ar(1, 2);
+      console.log(c1);
+    </script>
+  </body>
+</html>

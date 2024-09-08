@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" placeholder="用户名" />
+    <input type="text" placeholder="密码" />
+    <input type="button" value="登录" />
+
+    <script type="module">
+      import http from "./TS/1.注册.ts";
+      let ipt = document.querySelectorAll("input");
+      ipt[2].addEventListener("click", () => {
+        let url = "/users/login";
+        http
+          .request({
+            url,
+            method: "post",
+            data: {
+              username: ipt[0].value,
+              password: ipt[1].value,
+            },
+          })
+          .then((e) => {
+            if (e.data.code == 1) {
+              alert("恭喜你，登录成功!");
+              console.log(e.data.token);
+              localStorage.setItem("userid", e.data.user.id);
+              localStorage.setItem("token", e.data.token);
+              location.href = "./2.列表.html";
+            } else {
+              alert("登录失败，没有这个用户名!");
+            }
+          });
+      });
+    </script>
+  </body>
+</html>

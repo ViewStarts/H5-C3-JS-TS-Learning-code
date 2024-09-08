@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .father {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+      }
+      .son {
+        width: 100px;
+        height: 100px;
+        background-color: aqua;
+      }
+    </style>
+    <script></script>
+  </head>
+
+  <body>
+    <div class="father">
+      <div class="son"></div>
+    </div>
+    <script>
+      var father = document.querySelector(".father");
+      var son = document.querySelector(".son");
+      //   mouseover经过父盒子和子盒子都会触发
+      //   mouseenter只经过添加的盒子触发 不会冒泡
+      father.addEventListener("mouseenter", function () {
+        console.log(11);
+      });
+    </script>
+  </body>
+</html>

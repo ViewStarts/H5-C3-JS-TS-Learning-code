@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>换肤效果</title>
+    <style>
+      body {
+        width: 100px;
+        height: 1000px;
+        background: url(../img/人之律者.png) no-repeat;
+      }
+      img {
+        width: 200px;
+        height: 200px;
+      }
+      li {
+        list-style: none;
+        margin: 0 10px;
+      }
+      ul {
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="uu">
+      <li><img src="../img/花火4k.png" alt="" /></li>
+      <li><img src="../img/人之律者.png" alt="" /></li>
+      <li><img src="../img/理之旅者.jpg" alt="" /></li>
+      <li><img src="../img/初音.png" alt="" /></li>
+    </ul>
+    <script>
+      var imgs = document.querySelector(".uu").querySelectorAll("img");
+      for (var i = 0; i < imgs.length; i++) {
+        imgs[i].onclick = function () {
+          document.body.style.backgroundImage = "url(" + this.src + ")";
+        };
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        div {
+            width: 400px;
+            height: 400px;
+            background-color: aqua;
+            border: 10px solid red;
+            /* box-sizing: content-box; */
+            /* 默认的box-sizing:countent-box 这个是软件默认的，盒子大小为width+padding+border */
+
+
+        }
+
+        p {
+            width: 400px;
+            height: 400px;
+            background-color: aquamarine;
+            border: 10px solid red;
+            /* css3盒子模型 盒子最终的大小就是width的大小 */
+            /* 让盒子不会撑开 前提是padding和borde不会超过width宽度 */
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+
+    </div>
+    <p>小猪佩奇</p>
+
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //1.用我们布尔值参与的逻辑运算
+        console.log(3 > 5 && 3 > 2);//与 和
+        console.log(3 > 5 || 3 > 2);//或
+        console.log(!true);//非 not
+
+        //2. 值 或者 表达式 参与的逻辑运算
+
+        //3.逻辑与短路运算 当有多个表达式，左边的值可以确定结果的时候，就不再继续运算右边的表达式
+        //如果表达式1 结果为真 则返回表达式2
+        console.log(123 && 456);//456
+        //如果表达式1 结果为假 则返回表达式1
+        console.log(0 && 456);//0
+        console.log(0 && 1 + 2 && 4 * 5);//因为左边为0，后面全部不计算，返回0
+        console.log(NaN && 1 + 2 && 4 * 5);//nan
+
+        //4.逻辑或短路运算 如果表达式1 结果为真 则返回的是表达式1 
+        //如果表达式1结果为假 则返回表达式2
+        console.log(123 || 456);
+        console.log(123 || 456 || 4567 + 2345);
+        console.log(0 || 456 || 4567 + 2345);
+
+        //逻辑中断很重要 他会影响我们的程序执行结果
+        var num = 0;
+        console.log(123 || num++);
+        console.log(num);//0
+
+        console.log(123 && num++);
+        console.log(num);//1
+
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

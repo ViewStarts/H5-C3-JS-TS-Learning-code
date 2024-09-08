@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      img {
+        width: 300px;
+        height: 500px;
+        margin: 100px;
+      }
+    </style>
+    <script></script>
+  </head>
+
+  <body>
+    <img src="/1.HTML+CSS/cartoon/洛天依.png" alt="" />
+    <script>
+      //1.setInterval
+      //语法规范：window.setInterval(调用函数，延时时间);
+      var img = document.querySelector("img");
+      var xians = true;
+      setInterval(function () {
+        xians = !xians;
+        img.style.display = xians ? "none" : "block";
+      }, 2000);
+
+      //2.setTimeout 延时时间到了，就调用这个回调函数，只调用依次
+      //3.setInterval 每隔这个延时时间，就去调用这个回调函数，会调用很多次
+    </script>
+  </body>
+</html>
