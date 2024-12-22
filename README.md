@@ -1,2 +1,15 @@
-# H5-C3-JS-TS-Learning-code
-Learn some of the front-end when writing some code, put this warehouse to save. 学习前端的时候写的一些代码，放这个仓库进行保存
+# 个人前端代码仓库
+
+这是一个保存本人学习前端过程中所编写代码的仓库。这些代码主要包含以下内容：
+
+- **HTML**
+- **CSS**
+- **JavaScript**
+- **TypeScript**
+
+这些代码是我学习过程中亲手编写的，虽然可能未来用处不大，但它们承载了我宝贵的青春记忆，具有特殊的意义，因此将其保留下来。
+
+希望这个仓库不仅记录我的成长，也能激励我在前端技术道路上继续前行。
+
+---
+> **注：** 代码仅供个人留念和学习使用。
